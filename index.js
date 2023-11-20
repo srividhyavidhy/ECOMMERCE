@@ -15,6 +15,11 @@ const store_route = require("./routes/storeRoute")
 
 app.use('/api', store_route);
 
+//category route
+const category_route = require("./routes/categoryRoute")
+
+app.use('/api', category_route);
+
 app.listen(3000, function(){
     console.log("Server is Run....")
 })
