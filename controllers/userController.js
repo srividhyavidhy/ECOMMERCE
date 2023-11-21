@@ -195,18 +195,18 @@ const renew_token = async(id)=>{
       const secret_jwt = config.secret_jwt;
       const newSecretJwt = randomstring.generate();
 
-      fs.readFile('config/config.js','utf-8',(err,data)=>{
+      fs.readFile('config/config.js','utf-8',function(err,data){
         if(err) throw err;
         var newValue = data.replace(new RegExp(secret_jwt,"g"),newSecretJwt);
-        fs.write('config/config.js',newValue,'utf-8',(err,data)=>{
+        fs.writeFile('config/config.js',newValue,'utf-8',function(err,data){
             if(err) throw err;
             console.log("Done!");
         });
       });
 
-
       const token = await jwt.sign({_id:id},config.secret_jwt);
       return token;
+     
     } catch (error){
         res.status(400).send({success:false,msg:error.message});
     }

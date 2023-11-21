@@ -20,6 +20,14 @@ const category_route = require("./routes/categoryRoute")
 
 app.use('/api', category_route);
 
+//sub_category route
+const subcategory_route = require("./routes/subCategoryRoute")
+
+app.use('/api', subcategory_route);
+//product route
+const product_route = require("./routes/productRoute")
+
+app.use('/api', product_route);
 app.listen(3000, function(){
     console.log("Server is Run....")
 })
