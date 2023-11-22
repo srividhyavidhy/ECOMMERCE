@@ -45,4 +45,6 @@ product_route.get('/get-products',auth,product_controller.get_products);
 
 product_route.get('/search-product',auth, product_controller.searchProduct);
 
+product_route.post('/paginate',auth,product_controller.paginate)
+
 module.exports = product_route;

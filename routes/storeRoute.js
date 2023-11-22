@@ -41,6 +41,6 @@ store_route.post('/create-store',auth,upload.single('logo'),store_controller.cre
 //forget-password
 //user_route.post('/forget-password', user_controller.forget_password)
 
-//user_route.get('/reset-password', user_controller.reset_password);
+store_route.post('/find-nearest-store',auth, store_controller.find_store);
 
 module.exports = store_route;
